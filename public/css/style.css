@@ -8,7 +8,7 @@ body {
   background-color: #fafafa;
 }
 
-.header-mobile {
+.headerMobile {
   display: none;
 }
 
@@ -27,7 +27,7 @@ ion-icon {
   color: gray;
 }
 
-.header {
+.headerDesktop {
   height: 54px;
   width: 100vw;
   border-bottom: 1px solid #dbdbdb;
@@ -40,7 +40,7 @@ ion-icon {
   z-index: 10;
 }
 
-.topo {
+.desktopContainer {
   display: flex;
   justify-content: space-between;
   width: 934px;
@@ -430,7 +430,7 @@ em:hover {
     margin-right: auto;
   }
 
-  .topo {
+  .desktopContainer {
     margin: 0 26px;
   }
 
@@ -444,11 +444,11 @@ em:hover {
 }
 
 @media (max-width: 614px) {
-  .header {
+  .headerDesktop {
     display: none;
   }
 
-  .header-mobile {
+  .headerMobile {
     height: 54px;
     width: 100%;
     border-bottom: 1px solid #dbdbdb;
