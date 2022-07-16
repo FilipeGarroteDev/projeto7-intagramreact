@@ -3,91 +3,7 @@ export default function Content(){
   return (
     <div class="corpo">
         <MainContent />
-
-        <div class="sidebar">
-          <div class="usuario">
-            <img src="assets/img/catanacomics.svg"  alt=""/>
-            <div class="texto">
-              <strong>catanacomics</strong>
-              Catana
-            </div>
-          </div>
-
-          <div class="sugestoes">
-            <div class="titulo">
-              Sugestões para você
-              <div>Ver tudo</div>
-            </div>
-
-            <div class="sugestao">
-              <div class="usuario">
-                <img src="assets/img/bad.vibes.memes.svg"  alt=""/>
-                <div class="texto">
-                  <div class="nome">bad.vibes.memes</div>
-                  <div class="razao">Segue você</div>
-                </div>
-              </div>
-
-              <div class="seguir">Seguir</div>
-            </div>
-
-            <div class="sugestao">
-              <div class="usuario">
-                <img src="assets/img/chibirdart.svg"  alt=""/>
-                <div class="texto">
-                  <div class="nome">chibirdart</div>
-                  <div class="razao">Segue você</div>
-                </div>
-              </div>
-
-              <div class="seguir">Seguir</div>
-            </div>
-
-            <div class="sugestao">
-              <div class="usuario">
-                <img src="assets/img/razoesparaacreditar.svg"  alt=""/>
-                <div class="texto">
-                  <div class="nome">razoesparaacreditar</div>
-                  <div class="razao">Novo no Instagram</div>
-                </div>
-              </div>
-
-              <div class="seguir">Seguir</div>
-            </div>
-
-            <div class="sugestao">
-              <div class="usuario">
-                <img src="assets/img/adorable_animals.svg"  alt=""/>
-                <div class="texto">
-                  <div class="nome">adorable_animals</div>
-                  <div class="razao">Segue você</div>
-                </div>
-              </div>
-
-              <div class="seguir">Seguir</div>
-            </div>
-
-            <div class="sugestao">
-              <div class="usuario">
-                <img src="assets/img/smallcutecats.svg"  alt=""/>
-                <div class="texto">
-                  <div class="nome">smallcutecats</div>
-                  <div class="razao">Segue você</div>
-                </div>
-              </div>
-
-              <div class="seguir">Seguir</div>
-            </div>
-          </div>
-
-          <div class="links">
-            Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes • Hashtags • Idioma
-          </div>
-
-          <div class="copyright">
-            © 2021 INSTAGRAM DO FACEBOOK
-          </div>
-        </div>
+        <Sidebar />
       </div>
   )
 }
@@ -136,11 +52,11 @@ function Stories(){
 function Posts(){
   const postsArray = [
     {profileImg: "./css/img/meowed.svg", user: "meowed", postImg: "./css/img/gato-telefone.svg", likeImg: "./css/img/respondeai.svg", likeProfile: "respondeai", totalLikes: "outras 101.523 pessoas"},
-    {profileImg: "./css/img/meowed.svg", user: "meowed", postImg: "./css/img/gato-telefone.svg", likeImg: "./css/img/respondeai.svg", likeProfile: "respondeai", totalLikes: "outras 101.523 pessoas"},
-    {profileImg: "./css/img/meowed.svg", user: "meowed", postImg: "./css/img/gato-telefone.svg", likeImg: "./css/img/respondeai.svg", likeProfile: "respondeai", totalLikes: "outras 101.523 pessoas"},
-    {profileImg: "./css/img/meowed.svg", user: "meowed", postImg: "./css/img/gato-telefone.svg", likeImg: "./css/img/respondeai.svg", likeProfile: "respondeai", totalLikes: "outras 101.523 pessoas"},
-    {profileImg: "./css/img/meowed.svg", user: "meowed", postImg: "./css/img/gato-telefone.svg", likeImg: "./css/img/respondeai.svg", likeProfile: "respondeai", totalLikes: "outras 101.523 pessoas"},
-    {profileImg: "./css/img/meowed.svg", user: "meowed", postImg: "./css/img/gato-telefone.svg", likeImg: "./css/img/respondeai.svg", likeProfile: "respondeai", totalLikes: "outras 101.523 pessoas"},
+    {profileImg: "./css/img/perfil1.png", user: "garrote94", postImg: "./css/img/viagem3.png", likeImg: "./css/img/curtida3.png", likeProfile: "lele_piratinha", totalLikes: "outras 511.147 pessoas"},
+    {profileImg: "./css/img/perfil1.png", user: "garrote94", postImg: "./css/img/viagem5.png", likeImg: "./css/img/chibirdart.svg", likeProfile: "chibirdart", totalLikes: "outras 10.560 pessoas"},
+    {profileImg: "./css/img/barked.svg", user: "barked", postImg: "./css/img/dog.svg", likeImg: "./css/img/adorable_animals.svg", likeProfile: "adorable_animals", totalLikes: "outras 99.159 pessoas"},
+    {profileImg: "./css/img/perfil1.png", user: "garrote94", postImg: "./css/img/viagem7.png", likeImg: "./css/img/razoesparaacreditar.svg", likeProfile: "razoesparaacreditar", totalLikes: "outras 783.403 pessoas"},
+    {profileImg: "./css/img/perfil2.png", user: "turistando", postImg: "./css/img/viagem1.jpg", likeImg: "./css/img/smallcutecats.svg", likeProfile: "smallcutecats", totalLikes: "outras 1.503 pessoas"},
   ]
   return(
     <div class="posts">
@@ -185,4 +101,69 @@ function Posts(){
       })}
     </div>
   ) 
+}
+
+function Sidebar(){
+  return (
+    <div class="sidebar">
+      <UserSuggestion img="./css/img/catanacomics.svg" user="catanacomics" name="Catana"/>
+      <OtherSuggestion />
+      <SidebarFooter class="links" text="Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes • Hashtags • Idioma" />
+      <SidebarFooter class="copyright" text="© 2021 INSTAGRAM DO FACEBOOK" />
+    </div>
+  )
+}
+
+function UserSuggestion(props){
+  return(
+    <div class="usuario">
+      <img src={props.img}  alt=""/>
+      <div class="texto">
+        <strong>{props.user}</strong>
+        {props.name}
+      </div>
+    </div>
+  )
+}
+
+function OtherSuggestion(){
+  const suggestionsArray = [
+    {img: "./css/img/bad.vibes.memes.svg", name: "bad.vibes.memes", status: "Segue você"},
+    {img: "./css/img/chibirdart.svg", name: "chibirdart", status: "Segue você"},
+    {img: "./css/img/razoesparaacreditar.svg", name: "razoesparaacreditar", status: "Novo no Instagram"},
+    {img: "./css/img/adorable_animals.svg", name: "adorable_animals", status: "Segue você"},
+    {img: "./css/img/smallcutecats.svg", name: "smallcutecats", status: "Segue você"},
+  ]
+  return (
+    <div class="sugestoes">
+      <div class="titulo">
+        Sugestões para você
+        <div>Ver tudo</div>
+      </div>
+
+      {suggestionsArray.map((suggestion) => {
+        return (
+          <div class="sugestao">
+            <div class="usuario">
+              <img src={suggestion.img}  alt=""/>
+              <div class="texto">
+                <div class="nome">{suggestion.name}</div>
+                <div class="razao">{suggestion.status}</div>
+              </div>
+            </div>
+            <div class="seguir">Seguir</div>
+          </div>
+        )
+      })}
+
+    </div>
+  )
+}
+
+function SidebarFooter(props){
+  return (
+    <div class={props.class}>
+      {props.text}
+    </div>
+  )
 }

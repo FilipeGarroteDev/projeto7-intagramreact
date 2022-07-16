@@ -3,11 +3,11 @@ export default function Header(){
     <div class="navbar">
       <div class="container">
         <LogoDesktop />
-        <LogoIconMobile />
+        <IconsMobile class="logo-mobile" icon="logo-instagram"/>
         <LogoMobile />
         <Search />
         <IconsDesktop />
-        <IconsMobile />
+        <IconsMobile class="icones-mobile" icon="paper-plane-outline"/>
       </div>
     </div>
   )
@@ -21,12 +21,6 @@ function LogoDesktop(){
       <img src="./css/img/logo.png"  alt=""/>
     </div>
   )
-}
-
-function LogoIconMobile(){
-  <div class="logo-mobile">
-    <ion-icon name="logo-instagram"></ion-icon>
-  </div>
 }
 
 function LogoMobile(){
@@ -54,10 +48,10 @@ function IconsDesktop(){
   )
 }
 
-function IconsMobile(){
+function IconsMobile(props){
   return (
-    <div class="icones-mobile">
-      <ion-icon name="paper-plane-outline"></ion-icon>
+    <div class={props.class}>
+      <ion-icon name={props.icon}></ion-icon>
     </div>
   )
 }
