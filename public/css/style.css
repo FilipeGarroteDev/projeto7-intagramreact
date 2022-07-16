@@ -380,7 +380,7 @@ body {
     left: 0;
   }
 
-  .navbar .logo {
+  .navbar .logo, .setinha {
     display: none;
   }
 
