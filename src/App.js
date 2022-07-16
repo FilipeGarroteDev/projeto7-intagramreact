@@ -1,9 +1,11 @@
 import Header from "./Header.js"
+import Content from "./Content.js"
 
 export default function App(){
   return (
-  <Header />
+    <div>
+      <Header />
+      <Content />
+    </div>
   )
-
-
 }
