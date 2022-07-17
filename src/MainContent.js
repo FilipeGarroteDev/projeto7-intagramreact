@@ -62,7 +62,6 @@ function PostsContainer(){
 }
 
 function Post(props){
-
   const [likeColor, setLikeColor] = React.useState("md hydrated unliked")
   const [iconName, setIconName] = React.useState("heart-outline")
 
@@ -78,7 +77,7 @@ function Post(props){
       </div>
     </div>
 
-    <div class={"conteudo" + " teste"}>
+    <div class="conteudo">
       <img src={props.postImg}  alt="" onClick={() => {
             if (likeColor === "md hydrated unliked"){
               setLikeColor("md hydrated liked")
