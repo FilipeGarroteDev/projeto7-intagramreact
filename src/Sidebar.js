@@ -36,21 +36,23 @@ function OtherSuggestion(){
         <div>Ver tudo</div>
       </div>
 
-      {suggestionsArray.map((suggestion) => {
-        return (
-          <div class="sugestao">
-            <div class="usuario">
-              <img src={suggestion.img}  alt=""/>
-              <div class="texto">
-                <div class="nome">{suggestion.name}</div>
-                <div class="razao">{suggestion.status}</div>
-              </div>
-            </div>
-            <div class="seguir">Seguir</div>
-          </div>
-        )
-      })}
+      {suggestionsArray.map((suggestion) => <Suggestion img= {suggestion.img} name= {suggestion.name} status= {suggestion.status} />)}
 
+    </div>
+  )
+}
+
+function Suggestion(props){
+  return (
+    <div class="sugestao">
+      <div class="usuario">
+        <img src={props.img}  alt=""/>
+        <div class="texto">
+          <div class="nome">{props.name}</div>
+          <div class="razao">{props.status}</div>
+        </div>
+      </div>
+      <div class="seguir">Seguir</div>
     </div>
   )
 }

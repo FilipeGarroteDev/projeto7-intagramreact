@@ -2,39 +2,21 @@ export default function Header(){
   return (
     <div class="navbar">
       <div class="container">
-        <LogoDesktop />
+        <div class="logo">
+          <ion-icon name="logo-instagram"></ion-icon>
+          <div class="separador"></div>
+          <img src="./css/img/logo.png"  alt=""/>
+        </div>
         <IconsMobile class="logo-mobile" icon="logo-instagram"/>
-        <LogoMobile />
-        <Search />
+        <div class="instagram-mobile">
+          <img src="assets/img/logo.png" alt=""/>
+        </div>
+        <div class="pesquisa">
+          <input type="text" placeholder="Pesquisar" />
+        </div>
         <IconsDesktop />
         <IconsMobile class="icones-mobile" icon="paper-plane-outline"/>
       </div>
-    </div>
-  )
-}
-
-function LogoDesktop(){
-  return (
-    <div class="logo">
-      <ion-icon name="logo-instagram"></ion-icon>
-      <div class="separador"></div>
-      <img src="./css/img/logo.png"  alt=""/>
-    </div>
-  )
-}
-
-function LogoMobile(){
-  return (
-    <div class="instagram-mobile">
-      <img src="assets/img/logo.png" alt=""/>
-    </div>
-  )
-}
-
-function Search(){
-  return (
-    <div class="pesquisa">
-      <input type="text" placeholder="Pesquisar" />
     </div>
   )
 }
