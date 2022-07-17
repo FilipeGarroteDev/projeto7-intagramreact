@@ -14,18 +14,14 @@ export default function Header(){
         <div class="pesquisa">
           <input type="text" placeholder="Pesquisar" />
         </div>
-        <IconsDesktop />
+        <div class="icones">
+          <ion-icon name="paper-plane-outline"></ion-icon>
+          <ion-icon name="compass-outline"></ion-icon>
+          <ion-icon name="heart-outline"></ion-icon>
+          <ion-icon name="person-outline"></ion-icon>
+        </div>
         <IconsMobile class="icones-mobile" icon="paper-plane-outline"/>
       </div>
-    </div>
-  )
-}
-
-function IconsDesktop(){
-  const iconsArray = ["paper-plane-outline", "compass-outline", "heart-outline", "person-outline"]
-  return (
-    <div class="icones">
-      {iconsArray.map((element) => <ion-icon name={element}></ion-icon>)}
     </div>
   )
 }
