@@ -46,12 +46,12 @@ function Storie(props){
 
 function PostsContainer(){
   const postsArray = [
-    {profileImg: "./css/img/meowed.svg", user: "meowed", postImg: "./css/img/gato-telefone.svg", likeImg: "./css/img/respondeai.svg", likeProfile: "respondeai", totalLikes: "outras 101.523 pessoas"},
-    {profileImg: "./css/img/perfil1.png", user: "garrote94", postImg: "./css/img/viagem3.png", likeImg: "./css/img/curtida3.png", likeProfile: "lele_piratinha", totalLikes: "outras 511.147 pessoas"},
-    {profileImg: "./css/img/perfil1.png", user: "garrote94", postImg: "./css/img/viagem5.png", likeImg: "./css/img/chibirdart.svg", likeProfile: "chibirdart", totalLikes: "outras 10.560 pessoas"},
-    {profileImg: "./css/img/barked.svg", user: "barked", postImg: "./css/img/dog.svg", likeImg: "./css/img/adorable_animals.svg", likeProfile: "adorable_animals", totalLikes: "outras 99.159 pessoas"},
-    {profileImg: "./css/img/perfil1.png", user: "garrote94", postImg: "./css/img/viagem7.png", likeImg: "./css/img/razoesparaacreditar.svg", likeProfile: "razoesparaacreditar", totalLikes: "outras 783.403 pessoas"},
-    {profileImg: "./css/img/perfil2.png", user: "turistando", postImg: "./css/img/viagem1.jpg", likeImg: "./css/img/smallcutecats.svg", likeProfile: "smallcutecats", totalLikes: "outras 1.503 pessoas"},
+    {type: "photo", profileImg: "./css/img/meowed.svg", user: "meowed", postImg: "./css/img/gato-telefone.svg", likeImg: "./css/img/respondeai.svg", likeProfile: "respondeai", totalLikes: "outras 101.523 pessoas"},
+    {type: "photo", profileImg: "./css/img/perfil1.png", user: "garrote94", postImg: "./css/img/viagem3.png", likeImg: "./css/img/curtida3.png", likeProfile: "lele_piratinha", totalLikes: "outras 511.147 pessoas"},
+    {type: "photo", profileImg: "./css/img/perfil1.png", user: "garrote94", postImg: "./css/img/viagem5.png", likeImg: "./css/img/chibirdart.svg", likeProfile: "chibirdart", totalLikes: "outras 10.560 pessoas"},
+    {type: "photo", profileImg: "./css/img/barked.svg", user: "barked", postImg: "./css/img/dog.svg", likeImg: "./css/img/adorable_animals.svg", likeProfile: "adorable_animals", totalLikes: "outras 99.159 pessoas"},
+    {type: "photo", profileImg: "./css/img/perfil1.png", user: "garrote94", postImg: "./css/img/viagem7.png", likeImg: "./css/img/razoesparaacreditar.svg", likeProfile: "razoesparaacreditar", totalLikes: "outras 783.403 pessoas"},
+    {type: "photo", profileImg: "./css/img/perfil2.png", user: "turistando", postImg: "./css/img/viagem1.jpg", likeImg: "./css/img/smallcutecats.svg", likeProfile: "smallcutecats", totalLikes: "outras 1.503 pessoas"},
   ]
 
   return(
@@ -64,6 +64,7 @@ function PostsContainer(){
 function Post(props){
   const [likeColor, setLikeColor] = React.useState("md hydrated unliked")
   const [iconName, setIconName] = React.useState("heart-outline")
+  const [likeTransition, setLikeTransition] = React.useState("md hydrated likeHidden")
 
   return (
   <div class="post">
@@ -78,13 +79,19 @@ function Post(props){
     </div>
 
     <div class="conteudo">
-      <img src={props.postImg}  alt="" onClick={() => {
+      <img src={props.postImg}  alt="" onDoubleClick={() => {
             if (likeColor === "md hydrated unliked"){
               setLikeColor("md hydrated liked")
               setIconName("heart")
+              setLikeTransition("md hydrated likeOverlay")
+              setTimeout(() => setLikeTransition("md hydrated likeHidden"), 600)
+            } else {
+              setLikeTransition("md hydrated likeOverlay")
+              setTimeout(() => setLikeTransition("md hydrated likeHidden"), 600)
             }
             }
             }/>
+      <ion-icon name="heart" class={likeTransition}></ion-icon>
     </div>
 
     <div class="fundo">

@@ -316,6 +316,35 @@ body {
   color: red;
 }
 
+.conteudo {
+  position: relative;
+}
+
+.likeHidden{
+  width: 0;
+  height: 0;
+  position: absolute;
+  color: #FFFFFF;
+  top: 50%;
+  left: 50%;
+  transition: all .5s;
+}
+
+.likeOverlay {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  color: #FFFFFF;
+  top: calc(50% - 75px);
+  left: calc(50% - 75px);
+  opacity: 70%;
+  transition: all .5s;
+}
+
+.likeOverlay:hover, .likeHidden:hover{
+  cursor: initial;
+}
+
 @media (max-width: 935px) {
   .sidebar {
     display: none;
