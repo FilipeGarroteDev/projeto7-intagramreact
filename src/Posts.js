@@ -1,50 +1,6 @@
-import React from "react";
+import React from "react"
 
-export default function MainContent(){
-  return (
-  <div class="esquerda">
-    <StoriesContainer />
-    <PostsContainer />
-  </div>
-)
-}
-
-function StoriesContainer(){
-  const storiesArray = [
-    {img:"./css/img/9gag.svg", user: "9gag"},
-    {img:"./css/img/meowed.svg", user: "meowed"},
-    {img:"./css/img/barked.svg", user: "barked"},
-    {img:"./css/img/nathanwpylestrangeplanet.svg", user: "nathanwpylestrangeplanet"},
-    {img:"./css/img/wawawicomics.svg", user: "wawawicomics"},
-    {img:"./css/img/respondeai.svg", user: "respondeai"},
-    {img:"./css/img/filomoderna.svg", user: "filomoderna"},
-    {img:"./css/img/memeriagourmet.svg", user: "memeriagourmet"},
-  ]
-  return (
-    <div class="stories">
-      {storiesArray.map((storie) => <Storie img= {storie.img} user= {storie.user} />)}
-      <div class="setinha">
-        <ion-icon name="chevron-forward-circle"></ion-icon>
-      </div>
-    </div>
-  )
-}
-
-function Storie(props){
-
-  return (
-    <div class="story">
-      <div class="imagem">
-        <img src={props.img}  alt=""/>
-      </div>
-      <div class="usuario">
-        {props.user}
-      </div>
-    </div>
-  )
-}
-
-function PostsContainer(){
+export default function Posts(){
   const postsArray = [
     {type: "photo", profileImg: "./css/img/meowed.svg", user: "meowed", postImg: "./css/img/gato-telefone.svg", likeImg: "./css/img/respondeai.svg", likeProfile: "respondeai", totalLikes: "outras 101.523 pessoas"},
     {type: "photo", profileImg: "./css/img/perfil1.png", user: "garrote94", postImg: "./css/img/viagem3.png", likeImg: "./css/img/curtida3.png", likeProfile: "lele_piratinha", totalLikes: "outras 511.147 pessoas"},
@@ -79,7 +35,7 @@ function Post(props){
     </div>
 
     <div class="conteudo">
-      <img src={props.postImg}  alt="" onDoubleClick={() => {
+      <img src={props.postImg}  alt="" onClick={() => {
             if (likeColor === "md hydrated unliked"){
               setLikeColor("md hydrated liked")
               setIconName("heart")
